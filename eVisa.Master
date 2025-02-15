@@ -1,0 +1,129 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="eVisa.master.cs" Inherits="OnlineVisaApp.eVisa" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+    <link href="Content/css/style.css" rel="stylesheet" />
+    <link href="Content/css/responsive.css" rel="stylesheet" />
+    <link href="Content/css/custom.css" rel="stylesheet" />
+    <script src="Content/js/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+             
+            <div id="wrapper" class="">
+            <div class="main-wrapper">
+                <div class="page-wrapper">
+                    <div class="main-container">
+                        <%--header template start--%>
+                    <div class="top-bar">
+                    <div class="container">
+                    <div class="row">
+                         <div class="col-sm-12 col-md-12 col-lg-8">
+                              <div class="left-side">
+                                        <ul class="menu">
+                                        <li><a href="Home.aspx" class="top-links">Home</a></li>
+                                        <li><span class="top-sep">|</span></li>
+                                        <li><a href="" class="top-links">How to Apply</a></li>
+                                        </ul>
+                                  </div>
+                             </div>
+                         <div class="col-sm-12 col-md-12 col-lg-4">
+                             <div class="right-side">
+                                   <% if (Session["Username"] != null)
+  { %>
+                                  <ul class="menu">
+ <li><a href="#" class="top-links">Welcome,<%= Session["Username"] %>! </a></li>
+ <li>
+ <a id="applyforvisahref" href="Applyforvisa.aspx" class="top-links"> Apply for Visa</a></li>
+ <li>
+ <a href="Dashboard.aspx"class="top-links">Dashboard</a></li>
+ <li> 
+ <a href="Login.aspx" class="top-links">Logout</a>
+ </li>
+ <%}
+ else
+ {   %>
+                                <ul class="menu">
+                                <li>
+                                <a id="loginhref" href="Login.aspx" class="top-links"><i class="lindo-lock"></i> Login</a>
+                                </li>
+                                <li>
+                                <a href="SignUp.aspx" class="top-links">
+                                <i class="lindo-003-user-1"></i> Sign
+                                Up
+                                </a>
+                                </li>
+                                </ul>
+                                       <% } %>
+                            </div>
+                             </div>
+                    </div>
+                    </div>
+                    </div>
+                        <%--header template end--%>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                        <%--footer template start--%>
+                                        <div class="footer dark-bg footer-bg">
+                    <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="footer-box Courses">
+                            <ul class="links  col-padding-y">
+                                <li>
+                                   
+                                    <img src="Content/images/eVisa-logo-white.png" /></li>
+                                <li>
+                                    <p class="footer-text">
+                                        Electronic visas, commonly known as eVisas, 
+                                        are a modern and convenient way to obtain travel authorization for certain countries.
+                                        Instead of the traditional paper visa process, 
+                                        eVisas are obtained electronically through an online application system
+                                    </p>
+                                </li>
+          
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="footer-Copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="menu">
+                    <li><img src="Content/images/footer-ssl-certificate.png" class="footer-stamp" /></li>
+                    <li><span class="top-sep">&nbsp;</span></li>
+                    <li><img src="Content/images/footer-stamp-certificate.png" class="footer-stamp" /></li>
+                    <li><span class="top-sep">&nbsp;</span></li>
+                    <li><img src="Content/images/footer-https-certificate.png" class="footer-stamp" /></li>
+                    <li><span class="top-sep">&nbsp;</span></li>
+                    <li><img src="Content/images/footer-cards.png" class="footer-card" /></li>
+                </ul>
+                <hr class="my_hr_dark" />
+                <div class="copyrightinfo">&copy; 2024. All Rights Reserved.</div>
+            </div>
+         
+        </div>
+    </div>
+</div>
+            </div>
+                        <%--footer template end--%>
+            </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </form>
+</body>
+</html>
